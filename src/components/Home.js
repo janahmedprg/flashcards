@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChakraProvider } from "@chakra-ui/react";
 import {
     Box,
@@ -16,6 +16,21 @@ const Home = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [studySetName, setStudySetName] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [cardSets, setCardSets] = useState([]);
+
+    // Fetch cardSets data
+    useEffect(() => {
+        fetchCardSets(); // Fetch card sets when the component mounts
+    }, []);
+
+    const fetchCardSets = () => {
+        // Fetch card sets data here
+        // Example fetch call
+        fetch('http://example.com/cardsets')
+            .then(response => response.json())
+            .then(data => setCardSets(data))
+            .catch(error => console.error('Error fetching card sets:', error));
+    };
 
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
@@ -28,40 +43,40 @@ const Home = () => {
     };
 
     const handleSubmit = () => {
-      if (selectedFile && studySetName.trim() !== '') {
-        setIsSubmitting(true);
-        const formData = new FormData();
-        formData.append('upload', selectedFile);
-        formData.append('set_name', studySetName);
-        fetch('http://34.42.246.209:5000/user/65e3b03f315974d87bdd98eb/sets', {
-          method: 'POST',
-          body: formData
-        })
-        .then(response => {
-          if (response.ok) {
-            console.log('File uploaded successfully');
-            // Optionally, you can reset the file input here
-            setSelectedFile(null);
-            setStudySetName('');
-          } else {
-            console.error('Failed to upload file');
-          }
-        })
-        .catch(error => console.error('Error uploading file:', error))
-        .finally(() => {
-          setIsSubmitting(false);
-        });
-      } else {
-        alert("Please select a file and enter a study set name");
-      }
+        if (selectedFile && studySetName.trim() !== '') {
+            setIsSubmitting(true);
+            const formData = new FormData();
+            formData.append('upload', selectedFile);
+            formData.append('set_name', studySetName);
+            fetch('http://34.42.246.209:5000/user/65e3b03f315974d87bdd98eb/sets', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('File uploaded successfully');
+                        // Optionally, you can reset the file input here
+                        setSelectedFile(null);
+                        setStudySetName('');
+                        fetchCardSets(); // Fetch updated card sets after submission
+                    } else {
+                        console.error('Failed to upload file');
+                    }
+                })
+                .catch(error => console.error('Error uploading file:', error))
+                .finally(() => {
+                    setIsSubmitting(false);
+                });
+        } else {
+            alert("Please select a file and enter a study set name");
+        }
     };
 
     return (
         <div className="App" style={{ backgroundColor: "#0f4a7d"}}>
             <div>
-              <div style={{padding :'20px'}}>
-
-              </div>
+                <div style={{padding :'20px'}}>
+                </div>
                 <span
                     style={{
                         marginLeft: "5%",
@@ -113,35 +128,35 @@ const Home = () => {
 
             <div>
                 <ChakraProvider>
-                    <Button
-                        style={{
-                            marginLeft: "2%",
-                            marginTop: "20px",
-                            width: "20%",
-                            height: "50px",
-                            fontSize: "150%",
-                        }}
-                        colorScheme="blue"
-                        onClick={handleRemoveFile}
-                        disabled={!selectedFile}
-                    >
-                        Remove
-                    </Button>
-
-                    {isSubmitting ? <div className="spinner"></div> : <Button
-                               style={{
-                                   marginLeft: "2%",
-                                   marginTop: "20px",
-                                   width: "20%",
-                                   height: "50px",
-                                   fontSize: "150%",
-                               }}
-                               colorScheme="blue"
-                               onClick={handleSubmit}
-                               disabled={!selectedFile || studySetName.trim() === '' || isSubmitting}
-                               >
-                               Submit
-                           </Button> }
+                    {isSubmitting ? <div className="spinner"></div> : 
+                    
+                    <><Button
+                            style={{
+                                marginLeft: "2%",
+                                marginTop: "20px",
+                                width: "20%",
+                                height: "50px",
+                                fontSize: "150%",
+                            }}
+                            colorScheme="blue"
+                            onClick={handleRemoveFile}
+                            disabled={!selectedFile}
+                        >
+                            Remove
+                        </Button><Button
+                            style={{
+                                marginLeft: "2%",
+                                marginTop: "20px",
+                                width: "20%",
+                                height: "50px",
+                                fontSize: "150%",
+                            }}
+                            colorScheme="blue"
+                            onClick={handleSubmit}
+                            disabled={!selectedFile || studySetName.trim() === '' || isSubmitting}
+                        >
+                                Submit
+                            </Button></> }
                     
                 </ChakraProvider>
             </div>
@@ -150,9 +165,8 @@ const Home = () => {
                 <div style={{ backgroundColor: "#f15c58", padding: "10px" }}>
                   <h1 style={{ fontSize: "200%", margin: "0", color: "#333", fontWeight: "bold"}}>Your Study Sets</h1>
                 </div>
-
-                
             </div>
+            {RenderCardSets({cardSets})}
         </div>
     );
 };
