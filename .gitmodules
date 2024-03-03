@@ -1,0 +1,3 @@
+[submodule "HoloFlashLens"]
+	path = HoloFlashLens
+	url = https://github.com/gavincaul/HoloFlashLens.git
