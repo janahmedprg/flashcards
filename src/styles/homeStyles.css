@@ -1,0 +1,18 @@
+.container-home{
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #0e1111;
+    border-radius: 30px;
+    opacity: 0.75;
+    font-family: "Elianto";
+    color: white;
+}
+
+.uploadText{
+    font-size: 1.6rem;
+}
+
