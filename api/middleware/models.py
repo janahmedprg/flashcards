@@ -116,7 +116,7 @@ def transcribe_model_selection(
     audio = speech.RecognitionAudio(content=content)
 
     config = speech.RecognitionConfig(
-        encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
+        encoding=speech.RecognitionConfig.AudioEncoding.ENCODING_UNSPECIFIED,
         language_code="en-US",
     )
 
