@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/displayStyles.css";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Box, Text, Input, FormControl, FormLabel } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 
 const Display = () => {
