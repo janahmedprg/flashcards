@@ -6,6 +6,7 @@ import "../styles/grid.css";
 import "../styles/input_field.css";
 
 import "../styles/renderCards.css";
+import "../styles/loginStyles.css";
 
 import { Box, Text, Input, FormControl, FormLabel } from "@chakra-ui/react";
 
@@ -15,40 +16,51 @@ const Login = () => {
     navigate("/home");
   };
   return (
-    <div>
-      <ChakraProvider>
-        <Box
-          height="100vh"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flexDirection="column"
-          marginLeft="20%"
-          marginRight="20%"
-        >
-          <Text fontSize="3xl" mb={6}>
-            Login to HoloFlash
-          </Text>
-          <FormControl id="email" isRequired>
-            <FormLabel>Email address</FormLabel>
-            <Input type="email" />
-          </FormControl>
-          <FormControl id="password" isRequired mt={4}>
-            <FormLabel>Password</FormLabel>
-            <Input type="password" />
-          </FormControl>
-          <Button
-            colorScheme="teal"
-            variant="solid"
-            width="75%"
-            mt={6}
-            size="lg"
-            onClick={handleLoggingIn}
+    <div className="cc-login">
+      <div className="login-container">
+        <ChakraProvider>
+          <Box
+            height="60vh"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            flexDirection="column"
+            marginLeft="20%"
+            marginRight="20%"
           >
-            Sign In
-          </Button>
-        </Box>
-      </ChakraProvider>
+            <Text fontSize="3xl" mb={6} fontFamily={"Elianto"} color={"white"}>
+              Login to HoloFlash
+            </Text>
+            <FormControl id="email" borderColor={"white"} isRequired>
+              <FormLabel color={"white"} fontFamily={"Elianto"}>
+                Email address
+              </FormLabel>
+              <Input type="email" />
+            </FormControl>
+            <FormControl
+              color={"white"}
+              id="password"
+              borderColor={"white"}
+              isRequired
+              mt={4}
+            >
+              <FormLabel fontFamily={"Elianto"}>Password</FormLabel>
+              <Input type="password" />
+            </FormControl>
+            <Button
+              colorScheme="whiteAlpha"
+              variant="solid"
+              width="75%"
+              mt={6}
+              size="lg"
+              onClick={handleLoggingIn}
+              fontFamily={"Elianto"}
+            >
+              Sign In
+            </Button>
+          </Box>
+        </ChakraProvider>
+      </div>
     </div>
   );
 };
