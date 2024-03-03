@@ -47,7 +47,7 @@ const Display = () => {
             onClick={handleSignUp}
             fontFamily={"Elianto"}
           >
-            Sign In
+            Sign Up
           </Button>
         </Box>
       </ChakraProvider>

@@ -19,19 +19,15 @@ const Home = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [cardSets, setCardSets] = useState([]);
 
-  // Fetch cardSets data
-  useEffect(() => {
-    fetchCardSets(); // Fetch card sets when the component mounts
-  }, []);
 
-  const fetchCardSets = () => {
-    // Fetch card sets data here
-    // Example fetch call
-    fetch("http://example.com/cardsets")
-      .then((response) => response.json())
-      .then((data) => setCardSets(data))
-      .catch((error) => console.error("Error fetching card sets:", error));
-  };
+//   const fetchCardSets = () => {
+//     // Fetch card sets data here
+//     // Example fetch call
+//     fetch("http://example.com/cardsets")
+//       .then((response) => response.json())
+//       .then((data) => setCardSets(data))
+//       .catch((error) => console.error("Error fetching card sets:", error));
+//   };
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -42,6 +38,29 @@ const Home = () => {
     // Reset the input element's value
     document.getElementById("fileInput").value = "";
   };
+
+
+
+  const handleFetch = () => {
+      fetch("http://34.42.246.209:5000/user/65e4582acaa3e72677525db8/sets", {
+        method: "Get",
+      })
+        .then((response) => {
+          if (response.ok) {
+            console.log("File uploaded successfully");
+          } else {
+            console.error("Failed to upload file");
+          }
+          return response.json()
+        })
+        .then((data) => {
+          setIsSubmitting(false);
+          console.log(data);
+          setCardSets(data);
+
+        });
+    };
+
 
   const handleSubmit = () => {
     if (selectedFile && studySetName.trim() !== "") {
@@ -59,7 +78,6 @@ const Home = () => {
             // Optionally, you can reset the file input here
             setSelectedFile(null);
             setStudySetName("");
-            fetchCardSets(); // Fetch updated card sets after submission
           } else {
             console.error("Failed to upload file");
           }
@@ -78,7 +96,7 @@ const Home = () => {
       <div>
         <p className="uploadText">Upload your notes or lectures here</p>
         <ChakraProvider>
-          <form enctype="multipart/form-data">
+          <form encType="multipart/form-data">
             <Input
               id="upload" // Add an id to the input element
               style={{
@@ -155,6 +173,23 @@ const Home = () => {
               >
                 Submit
               </Button>
+              <Button
+                style={{
+                  marginLeft: "5%",
+                  marginTop: "20px",
+                  width: "20%",
+                  height: "50px",
+                  fontSize: "150%",
+                  borderRadius: "20px",
+                }}
+                colorScheme="blue"
+                onClick={handleFetch}
+                // disabled={
+                //   !selectedFile || studySetName.trim() === "" || isSubmitting
+                // }
+              >
+                Refresh
+              </Button>
             </div>
           )}
         </ChakraProvider>
@@ -190,7 +225,11 @@ const Home = () => {
           padding: "30px",
         }}
       >
-        {RenderCardSets({ cardSets })}
+        {cardSets ? cardSets.map((cardSet, index) => (
+          <div key={index}>
+            <Button  colorScheme='blue'>{cardSet.set_name}</Button>
+          </div>
+        )) : <h1>No card sets found</h1>} 
       </div>
     </div>
   );

@@ -33,9 +33,9 @@ const Login = () => {
             </Text>
             <FormControl id="email" borderColor={"white"} isRequired>
               <FormLabel color={"white"} fontFamily={"Elianto"}>
-                Email address
+                Username
               </FormLabel>
-              <Input type="email" />
+              <Input lineHeight={'50px'} type="email" />
             </FormControl>
             <FormControl
               color={"white"}
@@ -45,7 +45,7 @@ const Login = () => {
               mt={4}
             >
               <FormLabel fontFamily={"Elianto"}>Password</FormLabel>
-              <Input type="password" />
+              <Input lineHeight={'50px'} type="password" />
             </FormControl>
             <Button
               colorScheme="whiteAlpha"
@@ -56,7 +56,7 @@ const Login = () => {
               onClick={handleLoggingIn}
               fontFamily={"Elianto"}
             >
-              Sign In
+              Login
             </Button>
           </Box>
         </ChakraProvider>

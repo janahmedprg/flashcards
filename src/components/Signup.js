@@ -34,21 +34,21 @@ const Signup = () => {
             <Text fontSize="3xl" mb={6}>
               Sign Up for HoloFlash
             </Text>
-            <FormControl id="email" isRequired>
+            {/* <FormControl id="email" isRequired>
               <FormLabel>Email address</FormLabel>
-              <Input type="email" />
-            </FormControl>
+              <Input lineHeight={'50px'} type="email" />
+            </FormControl> */}
             <FormControl id="username" isRequired>
-              <FormLabel>username</FormLabel>
-              <Input type="username" />
+              <FormLabel>Username</FormLabel>
+              <Input lineHeight={'50px'} type="username" />
             </FormControl>
             <FormControl id="password" isRequired mt={4}>
               <FormLabel>Password</FormLabel>
-              <Input type="password" />
+              <Input lineHeight={'50px'} type="password" />
             </FormControl>
             <FormControl id="confirm_password" isRequired mt={4}>
-              <FormLabel>confirm password</FormLabel>
-              <Input type="confirm_password" />
+              <FormLabel>Confirm password</FormLabel>
+              <Input lineHeight={'50px'} type="password" />
             </FormControl>
             <Button
               colorScheme="whiteAlpha"
