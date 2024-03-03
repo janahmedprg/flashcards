@@ -116,13 +116,18 @@ def transcribe_model_selection(
     audio = speech.RecognitionAudio(content=content)
 
     config = speech.RecognitionConfig(
-        encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
+        encoding=speech.RecognitionConfig.AudioEncoding.MP3 if speech_file.endswith(".mp3") else speech.RecognitionConfig.AudioEncoding.LINEAR16,
         language_code="en-US",
     )
 
     response = client.recognize(config=config, audio=audio)
 
-    return response.results[0].alternatives[0].transcript
+    try:
+        res = response.results[0].alternatives[0].transcript
+    except:
+        return ""
+    
+    return res
 
 def convert_to_json(document):
     """Converts provided string to JSON format."""
