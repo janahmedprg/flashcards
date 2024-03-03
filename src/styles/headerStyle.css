@@ -14,7 +14,7 @@ h2.headerH2 {
 .header{
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 .headerWrap{
