@@ -1,0 +1,10 @@
+h1.headerText {
+  font-size: 2.5em; /* Adjust the font size as needed */
+  color: Black; /* Set the text color */
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
