@@ -49,7 +49,7 @@ const Home = () => {
       const formData = new FormData();
       formData.append("upload", selectedFile);
       formData.append("set_name", studySetName);
-      fetch("http://34.42.246.209:5000/user/65e3b03f315974d87bdd98eb/sets", {
+      fetch("http://34.42.246.209:5000/user/65e4582acaa3e72677525db8/sets", {
         method: "POST",
         body: formData,
       })
