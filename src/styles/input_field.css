@@ -1,0 +1,43 @@
+/* App.css */
+input[type="file"] {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #4255ff; /* Green border */
+    border-radius: 5px;
+    color: #4255ff; /* Green text */
+    padding: 10px;
+    width: 200px;
+    outline: none;
+    transition: border-color 0.5s ease;
+  }
+  
+  input[type="file"]:hover {
+    border-color: #4255ff; /* Darker green on hover */
+    background-color: #4255ff;
+    color : white;
+  }
+  
+  input[type="file"]:focus {
+    border-color: #4255ff; /* Focus color */
+  }
+  
+  /* Hide the default file upload button */
+  input[type="file"]::-webkit-file-upload-button {
+    display: none;
+  }
+  
+  /* Style the custom file upload button */
+  .custom-file-upload {
+    background-color: #4255ff;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #4255ff; /* Darker green on hover */
+  }
+  
