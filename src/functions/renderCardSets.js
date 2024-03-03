@@ -9,15 +9,22 @@ import {
     FormLabel,
   } from "@chakra-ui/react";
 
+import Study from '../components/study';
 
-
-  function RenderCardSets({ cardSets }) {
+function RenderCardSets({ cardSets }) {
 
   const [searchTerm, setSearchTerm] = useState('');
+
+
+
 
   const filteredCardSets = cardSets ? cardSets.filter(cardSet =>
     cardSet.title.toLowerCase().includes(searchTerm.toLowerCase())
 ) : [];
+
+
+
+
 
   return (
     <div>

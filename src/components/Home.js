@@ -17,6 +17,9 @@ const Home = () => {
     const [studySetName, setStudySetName] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [cardSets, setCardSets] = useState([]);
+    const [studying, setStudying] = useState(false);
+
+    
 
     // Fetch cardSets data
     useEffect(() => {
