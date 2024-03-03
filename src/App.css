@@ -12,16 +12,23 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.title {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  color: #4255ff;
+  font-size: 1.5rem;
+  font-family: 'Poppins';
+}
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #4255ff;
 }
 
 .App-link {
@@ -35,4 +42,71 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-section {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: flex-end; /* Align items to the right */
+  color: #4255ff;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.upload-section {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  align-items: center; 
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+}
+
+/* Style for the buttons */
+.button {
+  font-family: '', sans-serif;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style for the Signup button */
+.signup-button {
+  background-color: #4255ff;
+  color: #fff;
+}
+
+/* Style for the Login button */
+.login-button {
+  background-color: #ffffff;
+  color: #4255ff;
+  border: 1px solid #4255ff;
+}
+
+/* Hover effect */
+.button:hover {
+  background-color: #3141e5;
+  color: #fff;
 }
