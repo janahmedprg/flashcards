@@ -1,41 +1,56 @@
 import { useNavigate } from "react-router-dom";
+import "../styles/displayStyles.css";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Box, Text, Input, FormControl, FormLabel } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
 const Display = () => {
   const navigate = useNavigate();
-  const handleLogin = () => {
+  const handleLoggingIn = () => {
     navigate("login");
   };
   const handleSignUp = () => {
     navigate("signup");
   };
   return (
-    <div>
-      <div
-        className="title"
-        style={{ display: "flex", justifyContent: "space-between" }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-          }}
+    <div className="containerDisplay">
+      <ChakraProvider>
+        <Box
+          height="60vh"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
+          marginLeft="20%"
+          marginRight="20%"
         >
-          <button className="button signup-button" onClick={handleSignUp}>
-            Signup
-          </button>
-          <button className="button login-button" onClick={handleLogin}>
+          <Text fontSize="3xl" mb={6} fontFamily={"Elianto"}>
+            Login to HoloFlash
+          </Text>
+          <Button
+            colorScheme="blackAlpha"
+            variant="solid"
+            width="75%"
+            mt={6}
+            size="lg"
+            onClick={handleLoggingIn}
+            fontFamily={"Elianto"}
+          >
             Login
-          </button>
-        </div>
-      </div>
-      <div>
-        <h2>
-          HoloFlash is an online tool to help you turn your notes or lectures
-          into flashcards. You can practice these flashcards on the website or
-          on the HoloLens
-        </h2>
-      </div>
+          </Button>
+          <Button
+            colorScheme="blackAlpha"
+            variant="solid"
+            width="75%"
+            mt={6}
+            size="lg"
+            onClick={handleSignUp}
+            fontFamily={"Elianto"}
+          >
+            Sign In
+          </Button>
+        </Box>
+      </ChakraProvider>
     </div>
   );
 };

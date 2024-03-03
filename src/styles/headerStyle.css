@@ -1,10 +1,126 @@
 h1.headerText {
-  font-size: 2.5em; /* Adjust the font size as needed */
+  font-family: 'Elianto', sans-serif;
+  font-weight: 700; /* Adjust the font size as needed */
+  font-size: 3.9rem;
   color: Black; /* Set the text color */
+}
+
+h2.headerH2 {
+  font-family: 'Elianto', sans-serif;
+  color: Black; /* Set the text color */
+  font-size: 1.3rem;
 }
 
 .header{
   display: flex;
   justify-content: center;
+  margin-top: 20px;
+}
+
+.headerWrap{
   text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.imgHeader{
+  width: 10%;
+  height: auto;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 400px){
+  .imgHeader{
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .imgHeader{
+    width: 10%;
+  }
+}
+@media screen and (max-width: 700px){
+  .imgHeader{
+    width: 15%;
+  }
+}
+@media screen and (max-width: 620px){
+  .imgHeader{
+    width: 17%;
+  }
+}
+@media screen and ( max-width: 450px){
+  .imgHeader{
+    width: 20%;
+  }
+}
+@media screen and (max-width: 390px){
+  .imgHeader{
+    width: 20%;
+  }
+}
+@media screen and (max-width: 330px){
+  .imgHeader{
+    width: 20%;
+  }
+  h1.headerText{
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 1020px){
+  .imgHeader{
+    width: 8%;
+  } 
+}
+
+@media screen and (min-width: 1200px){
+  .imgHeader{
+    width: 7%;
+  } 
+}
+
+@media screen and (min-width: 1430px){
+  .imgHeader{
+    width: 6%;
+  } 
+}
+
+@media screen and (min-width: 1650px){
+  .imgHeader{
+    width: 5%;
+  } 
+}
+
+#root{
+  background-color: pink;
+  height: 100vh;
+  overflow: auto;
+  background: linear-gradient(228deg, #ee62e4, #ab35c8, #4fdfdf);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 24s ease infinite;
+  -moz-animation: AnimationName 24s ease infinite;
+  -o-animation: AnimationName 24s ease infinite;
+  animation: AnimationName 24s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 90%}
+  50%{background-position:100% 11%}
+  100%{background-position:0% 90%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 90%}
+  50%{background-position:100% 11%}
+  100%{background-position:0% 90%}
+}
+@-o-keyframes AnimationName {
+  0%{background-position:0% 90%}
+  50%{background-position:100% 11%}
+  100%{background-position:0% 90%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 90%}
+  50%{background-position:100% 11%}
+  100%{background-position:0% 90%}
 }

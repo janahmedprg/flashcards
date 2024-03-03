@@ -1,0 +1,19 @@
+.login-container{
+    background-color: #0e1111;
+    margin: 0 auto;
+    width: 60%;
+    top: 30vh;
+    right: 0vh;
+    border-radius: 30px;
+    opacity: 0.75;
+}
+.login-container>.css-16gml2x{
+    height: fit-content;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.cc-login{
+    display: grid;
+    place-items: center;
+    height: 60vh;
+}
