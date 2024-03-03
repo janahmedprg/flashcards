@@ -19,7 +19,7 @@ const Home = () => {
     const [cardSets, setCardSets] = useState([]);
     const [studying, setStudying] = useState(false);
 
-    
+
 
     // Fetch cardSets data
     useEffect(() => {
@@ -27,12 +27,24 @@ const Home = () => {
     }, []);
 
     const fetchCardSets = () => {
-        // Fetch card sets data here
-        // Example fetch call
-        fetch('http://example.com/cardsets')
+
+        const credentials = 'eli:elipass'
+        const encodedCredentials = btoa(credentials);
+
+
+        fetch('http://34.42.246.209:5000/user/65e457eaf560f3193f015589/sets', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Basic ${encodedCredentials}`,
+                },
+            })
             .then(response => response.json())
-            .then(data => setCardSets(data))
+            .then(data => {
+                setCardSets(data);
+            })
             .catch(error => console.error('Error fetching card sets:', error));
+
     };
 
     const handleFileChange = (event) => {
@@ -51,9 +63,17 @@ const Home = () => {
             const formData = new FormData();
             formData.append('upload', selectedFile);
             formData.append('set_name', studySetName);
-            fetch('http://34.42.246.209:5000/user/65e3b03f315974d87bdd98eb/sets', {
+            
+            const credentials = 'eli:elipass'
+            const encodedCredentials = btoa(credentials);
+            console.log(encodedCredentials)
+            fetch('http://34.42.246.209:5000/user/65e457eaf560f3193f015589/sets', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Basic ${encodedCredentials}`,
+                },
             })
                 .then(response => {
                     if (response.ok) {
@@ -61,11 +81,13 @@ const Home = () => {
                         // Optionally, you can reset the file input here
                         setSelectedFile(null);
                         setStudySetName('');
-                        fetchCardSets(); // Fetch updated card sets after submission
+                        //fetchCardSets(); // Fetch updated card sets after submission
+                        return response.json();
                     } else {
                         console.error('Failed to upload file');
                     }
                 })
+                .then((data) => setCardSets([...cardSets, data]))
                 .catch(error => console.error('Error uploading file:', error))
                 .finally(() => {
                     setIsSubmitting(false);
@@ -75,6 +97,14 @@ const Home = () => {
         }
     };
 
+
+
+
+
+
+
+
+    
     return (
         <div className="App" style={{ backgroundColor: "#0f4a7d"}}>
             <div>
@@ -92,7 +122,7 @@ const Home = () => {
                     Upload your notes or lectures here
                 </span>
                 <ChakraProvider />
-                <form enctype='multipart/form-data'  >
+                <form encType='multipart/form-data'  >
                 <Input
                     id="upload" // Add an id to the input element
                     style={{
@@ -169,6 +199,7 @@ const Home = () => {
                   <h1 style={{ fontSize: "200%", margin: "0", color: "#333", fontWeight: "bold"}}>Your Study Sets</h1>
                 </div>
             </div>
+            {/* {fetchCardSets()} */}
             {RenderCardSets({cardSets})}
         </div>
     );

@@ -13,12 +13,19 @@ import RenderCards from '../functions/renderCards';
 
 const Study = ( {cards} ) => {
 
+
+
     return (
         <div>
             <ChakraProvider>
-
+                <div>  
+                    <h1
+                    style={{fontSize: "150%"}}>
+                        {cards.set_title}
+                    </h1>
+                    
+                </div>
                 <RenderCards cards={cards} />
-
             </ChakraProvider>
         </div>
 
