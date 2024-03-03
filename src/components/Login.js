@@ -33,7 +33,7 @@ const Login = () => {
             </Text>
             <FormControl id="email" borderColor={"white"} isRequired>
               <FormLabel color={"white"} fontFamily={"Elianto"}>
-                Email address
+                Username
               </FormLabel>
               <Input lineHeight={'50px'} type="email" />
             </FormControl>
@@ -56,7 +56,7 @@ const Login = () => {
               onClick={handleLoggingIn}
               fontFamily={"Elianto"}
             >
-              Sign In
+              Login
             </Button>
           </Box>
         </ChakraProvider>

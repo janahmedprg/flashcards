@@ -21,7 +21,7 @@ const Study = ( {cards} ) => {
                 <div>  
                     <h1
                     style={{fontSize: "150%"}}>
-                        {cards.set_title}
+                        {cards.set_name}
                     </h1>
                     
                 </div>

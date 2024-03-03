@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 
-export default function RenderCards() {
-  const cards = [
-    { term: "What is the capital of France?", definition: "Paris" },
-    { term: "What is the capital of Germany?", definition: "Berlin" },
-    // Add more cards as needed
-  ];
-
+export default function RenderCards(cards) {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
 
