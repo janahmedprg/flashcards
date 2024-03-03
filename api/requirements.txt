@@ -4,6 +4,7 @@ python-dotenv
 pillow
 pymongo
 flask-pymongo
+flask-httpauth
 google-api-core
 google-cloud-documentai
 google-cloud-aiplatform
