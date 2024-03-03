@@ -3,7 +3,9 @@ flask-cors
 python-dotenv
 pillow
 pymongo
+flask-pymongo
 google-api-core
+google-cloud-documentai
 google-cloud-aiplatform
 google-cloud-speech
 google-cloud-vision

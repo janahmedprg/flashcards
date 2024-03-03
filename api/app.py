@@ -54,7 +54,7 @@ def get_user_sets(id):
         return jsonify(res)
     else:
         uploaded_file = request.files["upload"]
-        card_set = generate_set(request.form["uploaded_file"])
+        card_set = generate_set(uploaded_file)
 
         if not card_set:
             return {"Error": "Not enough information to make cards from"}
