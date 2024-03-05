@@ -1,4 +1,4 @@
-## Won 1st Place Best Use of AI in Education 🐔Hen Hacks 2024🐔
+## 1st Place -- Best Use of AI in Education 🐔Hen Hacks 2024🐔
 Servers have been shut down because the hackathon is over and we can't pay for the operating costs.
 
 
