@@ -1,5 +1,6 @@
 ## 1st Place -- Best Use of AI in Education 🐔Hen Hacks 2024🐔
-[https://devpost.com/software/holoflash](https://devpost.com/software/holoflash)
+
+Devpost link: [https://devpost.com/software/holoflash](https://devpost.com/software/holoflash)
 
 Servers have been shut down because the hackathon is over and we can't pay for the operating costs.
 
