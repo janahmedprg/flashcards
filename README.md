@@ -1,3 +1,7 @@
+## Won 1st Place Best Use of AI in Education 🐔Hen Hacks 2024🐔
+Servers have been shut down because the hackathon is over and we can't pay for the operating costs.
+
+
 ## Inspiration
 Our inspiration was fueled by the recent push towards Augmented and Mixed reality coupled with our collegiate desires to make methods of studying more efficient and enjoyable. We were also inspired by a paper from the University of Delawares very own [HCI lab](https://sites.udel.edu/hci-lab/) that highlights the beneficial impacts AI based virtual assistants can have on learning. [arXiv:2306.17278](https://arxiv.org/abs/2306.17278) 
 
